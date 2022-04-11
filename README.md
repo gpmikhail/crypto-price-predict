@@ -9,7 +9,9 @@ This project uses GPU to train the model, make sure you have installed:
  - [cuDNN SDK](https://developer.nvidia.com/cudnn)
  - [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/archives/index.html) (optional)
 
-To download historical data from Binance you need to [generate an Api Key](https://www.binance.com/en/support/faq/360002502072) and put it in functions.py
+To download historical data from Binance you need:
+- [generate your Api Key](https://www.binance.com/en/support/faq/360002502072) and put it in functions.py
+- install [python-binance](https://python-binance.readthedocs.io/en/latest/)
 
 # Functions description
 

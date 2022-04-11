@@ -15,12 +15,13 @@ client = Client(api_key, api_secret)
 def get_data(symbol, interval, start_date):
     klines = client.get_historical_klines(symbol, interval, start_date)
     data = pd.DataFrame(klines)
-    data.columns = ['open_time', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'qav', 'num_trades', 'taker_base_vol', 'taker_quote_vol', 'ignore']
+    data.columns = ['open_time', 'open', 'high', 'low', 'close', 'volume', 'close_time',
+                    'qav', 'num_trades', 'taker_base_vol', 'taker_quote_vol', 'ignore']
     data.index = [dt.datetime.fromtimestamp(x / 1000.0) for x in data.close_time]
     df = data.astype(float)
     df['date'] = data.index
     df.reset_index(drop=True, inplace=True)
-    df.to_csv(symbol + '.csv', index=None, header=True)
+    df.to_csv(symbol + '.csv', index=False, header=True)
     return df
 
 
@@ -35,6 +36,6 @@ def show_chart(data, symbol):
                                             high=data["high"],
                                             low=data["low"],
                                             close=data["close"])])
-    figure.update_layout(title = symbol + " Price",
-                     xaxis_rangeslider_visible=False)
+    figure.update_layout(title=symbol + " Price",
+                         xaxis_rangeslider_visible=False)
     figure.show()

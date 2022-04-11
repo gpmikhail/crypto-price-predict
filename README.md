@@ -2,6 +2,7 @@
 Crypto price prediction with Keras and Tensorflow trained on GPU
 Data is downloaded from Binance with your Api
 
+# GPU Setup
 This project uses GPU to train the model, make sure you have installed:
  - tensorflow-gpu
  - [cuda-toolkit](https://developer.nvidia.com/cuda-toolkit)
@@ -9,6 +10,7 @@ This project uses GPU to train the model, make sure you have installed:
  - [cuDNN SDK](https://developer.nvidia.com/cudnn)
  - [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/archives/index.html) (optional)
 
+# Binance Api Setup
 To download historical data from Binance you need:
 - [generate your Api Key](https://www.binance.com/en/support/faq/360002502072) and put it in functions.py
 - install [python-binance](https://python-binance.readthedocs.io/en/latest/)

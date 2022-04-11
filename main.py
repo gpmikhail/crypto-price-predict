@@ -1,10 +1,8 @@
-# Using Keras and python-binance
-
-from functions import *
 import numpy as np
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import load_model, Model, Sequential
 from tensorflow.keras.layers import Dense, LSTM
+from functions import *
 
 # Symbol, Interval and Start Date setup
 symbol = "BTCUSDT"

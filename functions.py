@@ -1,12 +1,14 @@
 import pandas as pd
-from binance.client import Client
 import datetime as dt
 import plotly.graph_objects as go
+from binance.client import Client
+
 
 # Client Settings
-api_key = 'Your Api Key'
-api_secret = 'Your Secret Api'
+api_key = 'Your API Key'
+api_secret = 'Your Secret API'
 client = Client(api_key, api_secret)
+
 
 # Functions
 
@@ -21,10 +23,11 @@ def get_data(symbol, interval, start_date):
     df.to_csv(symbol + '.csv', index=None, header=True)
     return df
 
+
 def load_data(file):
     data = pd.read_csv(file)
-    #data.index = [dt.datetime.fromtimestamp(x / 1000.0) for x in data.close_time]
     return data
+
 
 def show_chart(data, symbol):
     figure = go.Figure(data=[go.Candlestick(x=data['date'],

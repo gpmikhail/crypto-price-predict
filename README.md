@@ -1,5 +1,5 @@
 # crypto-price-predict
-Crypto price prediction with Keras and Tensorflow trained on GPU
+Crypto price prediction with Keras and Tensorflow trained on GPU.
 Data is downloaded from Binance with your API
 
 # GPU Setup
